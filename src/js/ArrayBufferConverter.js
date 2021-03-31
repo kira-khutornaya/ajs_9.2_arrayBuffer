@@ -4,12 +4,7 @@ export default class ArrayBufferConverter {
   }
 
   toString() {
-    let string = '';
     const buf = new Uint16Array(this.buffer);
-    for (const item of buf) {
-      string += String.fromCharCode(item);
-    }
-
-    return string;
+    return String.fromCharCode(...buf);
   }
 }
